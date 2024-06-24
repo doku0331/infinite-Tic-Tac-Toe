@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic-Tac-Toe</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+      max-width: 300px;
+      margin: auto;
+    }
+
+    .cell {
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+      background-color: #f0f0f0;
+      cursor: pointer;
+    }
+
+    .cell:hover {
+      background-color: #ddd;
+    }
+
+    .flash {
+      animation: flash 1s infinite;
+    }
+
+    @keyframes flash {
+
+      0%,
+      100% {
+        background-color: yellow;
+      }
+
+      50% {
+        background-color: transparent;
+      }
+    }
+
+    .recent-games {
+      max-width: 300px;
+      margin: auto;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center my-4">Tic-Tac-Toe</h1>
+
+
+    <!-- Modal -->
+    <div id="form" class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">請輸入玩家名稱</h5>
+          </div>
+          <div class="modal-body">
+            <form id="player-form">
+              <div class="form-group">
+                <label for="playerX">Player X Name:</label>
+                <input type="text" class="form-control" id="playerX" required>
+              </div>
+              <div class="form-group">
+                <label for="playerO">Player O Name:</label>
+                <input type="text" class="form-control" id="playerO" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Start Game</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-3 col-shift-5">
+        <div id="playerInfo"></div>
+        <div id="nowForWho"></div>
+        <div class="board" id="board">
+          <div class="cell" data-index="0"></div>
+          <div class="cell" data-index="1"></div>
+          <div class="cell" data-index="2"></div>
+          <div class="cell" data-index="3"></div>
+          <div class="cell" data-index="4"></div>
+          <div class="cell" data-index="5"></div>
+          <div class="cell" data-index="6"></div>
+          <div class="cell" data-index="7"></div>
+          <div class="cell" data-index="8"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-3 col-shift-5">
+        <div>
+          <h2>Recent Games</h2>
+        </div>
+        <ul class="list-group recent-games" id="recent-games"></ul>
+      </div>
+    </div>
+
+  </div>
+
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
